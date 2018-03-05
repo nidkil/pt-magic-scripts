@@ -1,11 +1,17 @@
 # PT Magic scripts
 This repository contains a number of bash scripts I use to manage PT Magic (PTM) on my VPS running on Ubuntu 17.10. PT Magic is an add-on to Profit Trailer (PT).
 
-Developing these scripts and writing blogs costs time. I hope they are helpful to you and save you time and effort. If you would like to support me feel free to tip me.
 
-BTC: 3CthfcvaF41nzVqPixCYP61Zi4Yu8vAMML
-ETH: 0x2e430FC28edB2B9A25190a533B84A461048896Ca
-LTC: MEfgTcmH9uZPodakX3o6q8jmdhxMhYtRph
+>
+> Developing user friendly scripts and writing readable and useful blogs costs time. I hope they are helpful to you and save you time and effort. If you would like to support me feel free leave a tip. Thanks in advance!
+> 
+> BTC: 3CthfcvaF41nzVqPixCYP61Zi4Yu8vAMML
+> 
+> ETH: 0x2e430FC28edB2B9A25190a533B84A461048896Ca
+> 
+> LTC: MEfgTcmH9uZPodakX3o6q8jmdhxMhYtRph
+>
+
 
 This repository contains the following scripts:
 1. Deploy script (deploy-scripts.sh)
