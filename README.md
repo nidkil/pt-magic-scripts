@@ -1,4 +1,4 @@
-# pt-magic-scripts
+# PT Magic scripts
 This repository contains a number of bash scripts I use to manage PT Magic (PTM) on my VPS running on Ubuntu 17.10. PT Magic is an add-on to Profit Trailer (PT).
 
 This repository contains the following scripts:
