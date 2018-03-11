@@ -13,6 +13,6 @@ while read -r SYM_LINK; do
 	cp -f *.sh $SYM_LINK/.
 	cp -rf helper-scripts $SYM_LINK/.
 	# We don't want this script top be published
-	rm $SYM_LINK/publish-script.sh
+	rm $SYM_LINK/publish-scripts.sh
 	chmod u+x $SYM_LINK/*.sh
 done <<< "$SYM_LINKS"
