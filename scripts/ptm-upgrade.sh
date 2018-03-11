@@ -9,7 +9,7 @@ source $CUR_DIR/script-helpers/helpers.sh
 # Get the parent directory of the current directory
 PARENT_DIR=`dirname $ORIG_DIR`
 # Strip the version number from the current directory
-BASE_DIR=${ORIG_DIR%-v*}
+BASE_PATH=${ORIG_DIR%-v*}
 CUR_INSTALLED=${ORIG_DIR#*-v}
 # Setup some constants
 PT_ROOT_DIR="profit-trailer"
@@ -19,7 +19,7 @@ PT_CFG_DIR="trading"
 PTM_CFG_DIR="_presets/Default"
 BCK_DIR="backup"
 # Use parameter expansion to extract the exchange identifier
-EXCHANGE=${BASE_DIR##*/ptm-}
+EXCHANGE=${BASE_PATH##*/ptm-}
 # Use parameter expansion to extract the final directory from the path
 DIR_ONLY=${CUR_DIR##*/}
 
@@ -71,11 +71,11 @@ handle_error() {
 	echo "The script will extract the unique exchange identifier from the directory name it is executed "
 	echo "from."
 	echo ""
-    echo "Usage: ptm-update.sh -d"
+    echo "Usage: ptm-upgrade.sh -d"
     echo ""
     echo " -d  show initialized variables and exit script, for debugging purposes"
     echo ""
-    echo "Example: ptm-update.sh"
+    echo "Example: ptm-upgrade.sh"
     echo ""
     exit
 }
@@ -84,30 +84,30 @@ debug_info() {
 	echo ""
 	echo " ------------------- DEBUG INFO ----------"
 	echo ""
-	echo "    ORIG_DIR		 : $ORIG_DIR"
-	echo "    CUR_DIR		 : $CUR_DIR"
-	echo "    PARENT_DIR	 : $PARENT_DIR"
-	echo "    BASE_DIR		 : $BASE_DIR"
-	echo "    PT_ROOT_DIR	 : $PT_ROOT_DIR"
-	echo "    PT_CFG_DIR	 : $PT_CFG_DIR"
-	echo "    PTM_ROOT_DIR	 : $PTM_ROOT_DIR"
+	echo "    ORIG_DIR       : $ORIG_DIR"
+	echo "    CUR_DIR        : $CUR_DIR"
+	echo "    PARENT_DIR     : $PARENT_DIR"
+	echo "    BASE_PATH      : $BASE_PATH"
+	echo "    PT_ROOT_DIR    : $PT_ROOT_DIR"
+	echo "    PT_CFG_DIR     : $PT_CFG_DIR"
+	echo "    PTM_ROOT_DIR   : $PTM_ROOT_DIR"
 	echo "    PTM_DEPLOY_DIR : $PTM_DEPLOY_DIR"
-	echo "    PTM_CFG_DIR	 : $PTM_CFG_DIR"
-	echo "    BCK_DIR		 : $BCK_DIR"
-	echo "    EXCHANGE		 : $EXCHANGE"
-	echo "    DIR_ONLY		 : $DIR_ONLY"
+	echo "    PTM_CFG_DIR    : $PTM_CFG_DIR"
+	echo "    BCK_DIR        : $BCK_DIR"
+	echo "    EXCHANGE       : $EXCHANGE"
+	echo "    DIR_ONLY       : $DIR_ONLY"
 	echo ""
 	echo "    CUR_INSTALLED  : $CUR_INSTALLED"
 	echo "    LATEST_RELEASE : $LATEST_RELEASE"
-	echo "    VERSION		 : $VERSION"
-	echo "    VERSION_NUM	 : $VERSION_NUM"
+	echo "    VERSION        : $VERSION"
+	echo "    VERSION_NUM    : $VERSION_NUM"
 	echo ""
-	echo "    BASE_URL		 : $BASE_URL"
-	echo "    FILE_NAME		 : $FILE_NAME"
-	echo "    URL		 	 : $URL"
+	echo "    BASE_URL       : $BASE_URL"
+	echo "    FILE_NAME      : $FILE_NAME"
+	echo "    URL            : $URL"
 	echo ""
-	echo "    PM2_PMT		 : $PM2_PMT"
-	echo "    PM2_PMT_MON	 : $PM2_PMT_MON"
+	echo "    PM2_PMT        : $PM2_PMT"
+	echo "    PM2_PMT_MON    : $PM2_PMT_MON"
 	echo ""
 	echo " ------------------- DEBUG INFO ----------"
 	echo ""
@@ -197,9 +197,9 @@ echo "Cleaning up: deleting zip file, tmp directory and debug file"
 rm *.zip debug.log
 rm -rf $TMP_DIR
 
-echo "Changing the softlink to the new version [$BASE_DIR-cur]"
-rm $BASE_DIR-cur
-ln -s $CUR_DIR $BASE_DIR-cur
+echo "Changing the softlink to the new version [$BASE_PATH-cur]"
+rm $BASE_PATH-cur
+ln -s $CUR_DIR $BASE_PATH-cur
 
 echo "Ready to startup the new version"
 
