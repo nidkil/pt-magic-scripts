@@ -4,7 +4,7 @@
 ORIG_DIR=$(pwd -P)
 CUR_DIR=$(pwd)
 
-source $CUR_DIR/script-helpers/helpers.sh
+source $CUR_DIR/helper-scripts/helpers.sh
 
 SYM_LINKS=$(find /opt/pt-magic/*-cur -type l)
 
