@@ -11,7 +11,7 @@ SYM_LINKS=$(find /opt/pt-magic/*-cur -type l)
 while read -r SYM_LINK; do
     echo "Publishing scripts to: $SYM_LINK"
 	cp -f *.sh $SYM_LINK/.
-	cp -rf script-helpers $SYM_LINK/.
+	cp -rf helper-scripts $SYM_LINK/.
 	# We don't want this script top be published
 	rm $SYM_LINK/publish-script.sh
 	chmod u+x $SYM_LINK/*.sh
